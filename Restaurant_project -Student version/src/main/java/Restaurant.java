@@ -69,4 +69,15 @@ public class Restaurant {
         return name;
     }
 
+    public int viewOrderTotal(List<String> selectedMenuItems) {
+        int totalPrice = 0;
+        for (String selectMenuItem:
+                selectedMenuItems) {
+            Item matchedItem = findItemByName(selectMenuItem);
+            totalPrice += matchedItem.getPrice();
+        }
+
+        System.out.println("Your order will cost : " + totalPrice);
+        return totalPrice;
+    }
 }
